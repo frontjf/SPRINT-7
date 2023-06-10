@@ -1,0 +1,136 @@
+<div class="panel p-2 m-3">
+  <div>
+    <label for="numPaginas">Número de páginas:</label>
+    <div>
+      <button (click)="decrementarPaginas()" class="m-1">-</button>
+      <input type="number" [(ngModel)]="numPaginas" id="numPaginas" (input)="actualizarNumPaginas()">
+      <button (click)="incrementarPaginas()">+</button>
+      <button type="button" class="btn btn-outline-primary mx-4 rounded-3" (click)="openModal('myModalA')">i</button>
+    </div>
+  </div>
+  <div>
+    <label for="numIdiomas">Número de idiomas:</label>
+    <div>
+      <button (click)="decrementarIdiomas()" class="m-1">-</button>
+      <input type="number" [(ngModel)]="numIdiomas" id="numIdiomas" (input)="actualizarNumIdiomas()">
+      <button (click)="incrementarIdiomas()">+</button>
+      <button type="button" class="btn btn-outline-primary rounded-3 mx-4" (click)="openModal('myModalB')">i</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal A -->
+<div class="container m-5">
+
+<div id="myModalA" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Mensaje</h5>
+        <button type="button" class="close btn btn-danger" (click)="closeModal('myModalA')">&times;</button>
+      </div>
+      <div class="modal-body">
+        {{ mensajeModalA }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="closeModal('myModalA')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal B -->
+<div id="myModalB" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Mensaje</h5>
+        <button type="button" class="close btn btn-danger" (click)="closeModal('myModalB')">&times;</button>
+      </div>
+      <div class="modal-body">
+        {{ mensajeModalB }}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" (click)="closeModal('myModalB')">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="panel">
+  <div>
+    <label for="numPaginas">Número de páginas:</label>
+    <div>
+      <button (click)="decrementarPaginas()">-</button>
+      <input type="number" [(ngModel)]="numPaginas" id="numPaginas" (input)="actualizarNumPaginas()">
+      <button (click)="incrementarPaginas()">+</button>
+    </div>
+  </div>
+  <div>
+    <label for="numIdiomas">Número de idiomas:</label>
+    <div>
+      <button (click)="decrementarIdiomas()">-</button>
+      <input type="number" [(ngModel)]="numIdiomas" id="numIdiomas" (input)="actualizarNumIdiomas()">
+      <button (click)="incrementarIdiomas()">+</button>
+    </div>
+  </div>
+</div> -->
+
+
+
+
+
+
+<!-- <div class="panel">
+    <div>
+      <label for="numPaginas">Número de páginas:</label>
+      <div>
+        <button (click)="decrementarPaginas()">-</button>
+        <input type="number" [(ngModel)]="numPaginas" id="numPaginas">
+        <button (click)="incrementarPaginas()">+</button>
+      </div>
+    </div>
+    <div>
+      <label for="numIdiomas">Número de idiomas:</label>
+      <div>
+        <button (click)="decrementarIdiomas()">-</button>
+        <input type="number" [(ngModel)]="numIdiomas" id="numIdiomas">
+        <button (click)="incrementarIdiomas()">+</button>
+      </div>
+    </div>
+  </div> -->
+  
