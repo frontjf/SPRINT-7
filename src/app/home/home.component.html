@@ -1,52 +1,57 @@
-
 <div class="container">
-  <div class="row input-group mb-3">
+  <div class="row input-group mb-3 flex-column">
     <div class="col-12 p-3">
-
       <h2>Selecciona los servicios:</h2>
-
     </div>
 
     <div class="col-4 p-3">
+      <div class="input-group-text p-2">
+        <input type="checkbox" [(ngModel)]="opcionesSeleccionadas[0]" (change)="calcularPresupuesto()">
+        <label for="servicio1" class="p-2">Hacer una página web (500 €)</label>
+      </div>
 
-      
-        <div class="input-group-text p-2">
+      <ng-container *ngIf="opcionesSeleccionadas[0]" class="">
+        <app-panel (numPaginasChange)="actualizarNumPaginas($event)" (numIdiomasChange)="actualizarNumIdiomas($event)"></app-panel>
+      </ng-container>
 
-          <input type="checkbox" [(ngModel)]="opcionesSeleccionadas[0]" (change)="calcularPresupuesto()">
-          <label for="servicio1" class="p-2">Hacer una página web (500 €)</label><br>
+      <div class="input-group-text p-2">
+        <input type="checkbox" [(ngModel)]="opcionesSeleccionadas[1]" (change)="calcularPresupuesto()">
+        <label for="servicio2" class="p-2">Hacer una campaña SEO (300 €)</label>
+      </div>
 
-        </div>
-
-          <ng-container *ngIf="opcionesSeleccionadas[0]" class="">
-            <app-panel (numPaginasChange)="actualizarNumPaginas($event)" (numIdiomasChange)="actualizarNumIdiomas($event)"></app-panel>
-          </ng-container>
-
-          <div class="input-group-text p-2">
-
-            <input type="checkbox" [(ngModel)]="opcionesSeleccionadas[1]" (change)="calcularPresupuesto()">
-            <label for="servicio2" class="p-2">Hacer una campaña SEO (300 €)</label><br>
-
-          </div>
-
-          <div class="input-group-text p-2">
-
-            <input type="checkbox" [(ngModel)]="opcionesSeleccionadas[2]" (change)="calcularPresupuesto()">
-            <label for="servicio3" class="p-2">Hacer una campaña de publicidad (200 €)</label><br>
-
-          </div>
+      <div class="input-group-text p-2">
+        <input type="checkbox" [(ngModel)]="opcionesSeleccionadas[2]" (change)="calcularPresupuesto()">
+        <label for="servicio3" class="p-2">Hacer una campaña de publicidad (200 €)</label>
+      </div>
     </div>
 
     <div class="col-12 p-3">
-
-      
       <h3>Presupuesto total: {{ presupuestoTotal }} €</h3>
       <br>
-
-      <button routerLink="/" class="btn btn-success">Pagina de inicio</button>
     </div>
 
-    <div class="col col-4 d-flex justify-content-start mt-5">
-      <a  routerLink="/"><img class="img-fluid" src="../../assets/aseoMarketing.jpg" alt="agencia SEO"></a>
+    <div class="col-4 col-md-4 p-3">
+      <div class="form-group">
+        <label for="nombreUsuario">Usuario</label>
+        <input type="text" id="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario" placeholder="Nombre de usuario">
+      </div>
+
+      <div class="form-group">
+        <label for="nombrePresupuesto">Presupuesto</label>
+        <input type="text" id="nombrePresupuesto" class="form-control" [(ngModel)]="nombrePresupuesto" placeholder="Nombre de presupuesto">
+      </div>
+
+      <button class="btn btn-primary mt-2" (click)="enviarPresupuesto()">Enviar</button>
+    </div>
+
+    <div class="col-12 col-md-6 d-flex justify-content-start mt-5">
+      <a routerLink="/">
+        <img class="img-fluid" src="../../assets/aseoMarketing.jpg" alt="agencia SEO">
+      </a>
+    </div>
+
+    <div class="col-12 col-md-6 mt-3">
+      <button routerLink="/" class="btn btn-success">Pagina de inicio</button>
     </div>
   </div>
 </div>
@@ -56,25 +61,6 @@
 
 
 
-
-
-
-
-<!-- <h2>Selecciona los servicios:</h2>
-
-<input type="checkbox" [(ngModel)]="opcionesSeleccionadas[0]" (change)="calcularPresupuesto()">
-<label for="servicio1">Hacer una página web (500 €)</label><br>
-<ng-container *ngIf="opcionesSeleccionadas[0]">
-  <app-panel [(numPaginas)]="numPaginas" [(numIdiomas)]="numIdiomas" (numPaginasChange)="calcularPresupuesto()" (numIdiomasChange)="calcularPresupuesto()"></app-panel>
-</ng-container>
-
-<input type="checkbox" [(ngModel)]="opcionesSeleccionadas[1]" (change)="calcularPresupuesto()">
-<label for="servicio2">Hacer una campaña SEO (300 €)</label><br>
-
-<input type="checkbox" [(ngModel)]="opcionesSeleccionadas[2]" (change)="calcularPresupuesto()">
-<label for="servicio3">Hacer una campaña de publicidad (200 €)</label><br>
-
-<h3>Presupuesto total: {{ presupuestoTotal }} €</h3> -->
 
 
 
